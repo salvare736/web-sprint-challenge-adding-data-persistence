@@ -111,6 +111,13 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+  Ans) SQL is the languade that is used to interact with the Relational Database being worked on. A developer writes queries in SQL to draw data (often relational data) from a database.
+
 2. Why do tables need a Primary Key?
+  Ans) Primary keys circumvent the problem of having to repeat data entry, eliminating the possibilty of typos or inconsistencies in said data.
+
 3. What is the name given to a table column that references the Primary Key on another table?
+  Ans) A foreign key refers to the primary key in another table.
+
 4. What do we need in order to have a _many to many_ relationship between two tables?
+  Ans) A junction table is useful in connecting both tables in this example.
