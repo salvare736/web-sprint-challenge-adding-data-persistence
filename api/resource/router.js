@@ -11,7 +11,8 @@ const router = express.Router();
 // get all resources
 router.get('/', async (req, res, next) => {
     try {
-
+        const resources = await Resources.getResources();
+        res.json(resources);
     } catch (err) {
         next(err);
     }

@@ -11,7 +11,8 @@ const router = express.Router();
 // get all tasks
 router.get('/', async (req, res, next) => {
     try {
-
+        const tasks = await Tasks.getTasks();
+        res.json(tasks);
     } catch (err) {
         next(err);
     }
