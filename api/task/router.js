@@ -1,9 +1,8 @@
 const express = require('express');
-const Projects = require('../project/model');
-const Resources = require('../resource/model');
 const Tasks = require('./model');
 const {
-    middleware
+    validateTask,
+    checkExistingProject
 } = require('../middleware');
 
 const router = express.Router();
@@ -19,9 +18,10 @@ router.get('/', async (req, res, next) => {
 });
 
 // create new task
-router.post('/', async (req, res, next) => {
+router.post('/', validateTask, checkExistingProject, async (req, res, next) => {
     try {
-
+        const createdTask = await Tasks.createTask(req.body);
+        res.status(201).json(createdTask);
     } catch (err) {
         next(err);
     }
